@@ -26,8 +26,10 @@ set_project_warnings(project_warnings)
 
 include(cmake/Conan.cmake)
 run_conan()
-include(cmake/FindSdl2.cmake)
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 
 find_package(SDL2 REQUIRED )
+include_directories(${SDL2_INCLUDE_DIR})
 
 add_subdirectory(src)
