@@ -67,14 +67,16 @@
 # message("<FindSDL2.cmake>")
 
 SET(SDL2_SEARCH_PATHS
-        ~/Library/Frameworks
-        /Library/Frameworks
+        #~/Library/Frameworks
+        #/Library/Frameworks
         /usr/local
+        /usr/local/Cellar/sdl2
         /usr
         /sw # Fink
         /opt/local # DarwinPorts
         /opt/csw # Blastwave
         /opt
+
         ${SDL2_PATH}
         )
 
