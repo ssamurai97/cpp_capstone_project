@@ -3,11 +3,11 @@
 //
 
 #include<fmt/core.h>
-#include"../include/game.h"
+#include"../include/game.hpp"
 
 int main(){
 
-    Game g{};
+    pong::Game g{};
     if(auto success = g.initialize(); success){
         g.run_loop();
     }
