@@ -5,8 +5,9 @@
 #include "../include/game.hpp"
 namespace pong {
     Game::Game() :
-            d_is_running{true},
-            d_window{nullptr} {}
+            d_is_running{true}
+            ,d_window{nullptr}
+            ,d_render{nullptr}{}
 
     bool Game::initialize() {
 
@@ -29,6 +30,16 @@ namespace pong {
             spdlog::error("Failed to create window {} ", SDL_GetError());
             return false;
         }
+
+        if(d_render = SDL_CreateRenderer(d_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC); != d_render){
+            spdlog::error("Failed to create render {} ", SDL_GetError());
+            return false;
+        }
+
+        lasttick = SDL_GetTicks();
+        fpstick = lasttick;
+        fps = 0;
+        framecount = 0;
 
         return true;
     }

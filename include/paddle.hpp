@@ -15,7 +15,7 @@ namespace pong {
         void Render(float delta);
 
     private:
-        SDL_Texture* texture{nullptr};
+        SDL_Texture* d_texture{nullptr};
     };
 }
 #endif //PONG_PADDLE_HPP
