@@ -7,9 +7,10 @@
 
 int main(){
 
-    pong::Game g{};
-    if(auto success = g.initialize(); success){
-        g.run_loop();
+    //std::unique_ptr<pong::Game> g = std::make_unique<pong::Game>();
+    if(auto game = std::make_unique<pong::Game>(); game->initialize()){
+        game->run_loop();
     }
 
+   return 0;
 }
