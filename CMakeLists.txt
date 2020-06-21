@@ -21,15 +21,16 @@ add_library(project_warnings INTERFACE)
 
 # standard compiler warnings
 include(cmake/CompilerWarnings.cmake)
-set_project_warnings(project_warnings)
+#set_project_warnings(project_warnings)
 
 
 include(cmake/Conan.cmake)
 run_conan()
+include(FindPkgConfig)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
+PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
+#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
+#list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
+find_package(SDL2 REQUIRED)
 
-find_package(SDL2 REQUIRED )
-include_directories(${SDL2_INCLUDE_DIR})
-
-add_subdirectory(src)
+add_subdirectory(src )
