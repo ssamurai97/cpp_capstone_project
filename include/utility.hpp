@@ -8,10 +8,9 @@
 namespace utility {
     struct Utility {
 
-        constexpr  static float  BALL_SPEED  = 900;
-        constexpr static float FPS_DELAY     =  500;
-        constexpr static float AI_SPEED      =  400;
+        constexpr  static float  BALL_SPEED    = 900;
+        constexpr static float   FPS_DELAY     =  500;
+        constexpr static float   AI_SPEED      =  400;
     };
 }
-
 #endif //PONG_UTILITY_HPP
