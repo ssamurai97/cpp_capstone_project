@@ -17,9 +17,16 @@ macro(run_conan)
             REQUIRES
             ${CONAN_EXTRA_REQUIRES}
             catch2/2.11.0
-            docopt.cpp/0.6.2
+            #docopt.cpp/0.6.2
             fmt/6.1.2
+            glew/2.1.0
+            glm/0.9.9.8
             spdlog/1.5.0
+            sdl2/2.0.12@bincrafters/stable
+            #soil2/1.20@bincrafters/stable
+            stb/20200203
+            imgui/1.78
+            nlohmann_json/3.9.1
             OPTIONS
             ${CONAN_EXTRA_OPTIONS}
             BASIC_SETUP

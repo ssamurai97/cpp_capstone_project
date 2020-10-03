@@ -1,16 +1,12 @@
-//
-// Created by kuchlong on 5/28/20.
-//
 
-#include<fmt/core.h>
-#include"../include/game.hpp"
+#include "../include/game.h"
 
 int main(){
 
-    //std::unique_ptr<pong::Game> g = std::make_unique<pong::Game>();
-    if(auto game = std::make_unique<pong::Game>(); game->initialize()){
-        game->run_loop();
-    }
 
-   return 0;
+  if( auto game =my_game::Game(); game.init()){
+    game.run_loop();
+  }
+
+ return 0;
 }

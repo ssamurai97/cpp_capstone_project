@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.13)
 
-# Set the project name to your project name, my project isn't very descriptive
-project(pong CXX)
+# Set the project name to your project name,
+project(my_game CXX)
 include(cmake/StandardProjectSettings.cmake)
 
 # Link this 'library' to set the c++ standard / compile-time options requested
 add_library(project_options INTERFACE)
-target_compile_features(project_options INTERFACE cxx_std_20)
+target_compile_features(project_options INTERFACE cxx_std_17)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
     option(ENABLE_BUILD_WITH_TIME_TRACE "Enable -ftime-trace to generate time tracing .json files on clang" OFF)
@@ -23,14 +23,18 @@ add_library(project_warnings INTERFACE)
 include(cmake/CompilerWarnings.cmake)
 #set_project_warnings(project_warnings)
 
-
+include(cmake/PVS-Studio.cmake)
 include(cmake/Conan.cmake)
 run_conan()
 include(FindPkgConfig)
 
-PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
-#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
-#list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
-find_package(SDL2 REQUIRED)
+find_package(OpenGL REQUIRED)
 
-add_subdirectory(src )
+add_subdirectory(src)
+
+pvs_studio_add_target(TARGET ${PROJECT_NAME}.analyze ALL
+        ANALYZE game
+        OUTPUT FORMAT errorfile
+        PREPROCESSOR clang
+        LOG target_${PROJECT_NAME}.err
+        )
