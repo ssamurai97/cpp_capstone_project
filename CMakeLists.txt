@@ -23,18 +23,13 @@ add_library(project_warnings INTERFACE)
 include(cmake/CompilerWarnings.cmake)
 #set_project_warnings(project_warnings)
 
-include(cmake/PVS-Studio.cmake)
+#include(cmake/PVS-Studio.cmake)
 include(cmake/Conan.cmake)
 run_conan()
 include(FindPkgConfig)
+PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
 
 find_package(OpenGL REQUIRED)
-
+find_package(SDL2 REQUIRED)
 add_subdirectory(src)
 
-pvs_studio_add_target(TARGET ${PROJECT_NAME}.analyze ALL
-        ANALYZE game
-        OUTPUT FORMAT errorfile
-        PREPROCESSOR clang
-        LOG target_${PROJECT_NAME}.err
-        )

@@ -13,9 +13,8 @@ target_link_libraries(game PRIVATE
         CONAN_PKG::spdlog
         CONAN_PKG::glm
         CONAN_PKG::glew
-        CONAN_PKG::nlohmann_json
         OpenGL::GL
-        CONAN_PKG::sdl2
+        SDL2::SDL2
         CONAN_PKG::imgui
         CONAN_PKG::stb
         )
