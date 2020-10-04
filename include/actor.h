@@ -6,7 +6,6 @@
 #define MY_GAME_ACTOR_H
 #include <cstdint>
 #include <vector>
-#include <nlohmann/json.hpp>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include "component.h"
