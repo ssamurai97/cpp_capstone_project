@@ -5,7 +5,6 @@
 #ifndef MY_GAME_COMPONENT_H
 #define MY_GAME_COMPONENT_H
 #include <cstdint>
-#include <nlohmann/json.hpp>
 namespace my_game {
 class Actor;
 class Component
