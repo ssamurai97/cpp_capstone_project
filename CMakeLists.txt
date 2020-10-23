@@ -27,7 +27,7 @@ include(cmake/CompilerWarnings.cmake)
 include(cmake/Conan.cmake)
 run_conan()
 include(FindPkgConfig)
-PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
+PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2 )
 
 find_package(OpenGL REQUIRED)
 find_package(SDL2 REQUIRED)

@@ -95,7 +95,7 @@ void Renderer::init(float width, float height)
 }
 void Renderer::draw(){
 
-  clear_color({0.0f, 0.0f, 0.0f, 1.0f});
+  clear_color({0.8f, 0.5f, 0.5f, 1.0f});
   // Clear the color buffer
   clear();
   // Enable depth buffering/disable alpha blend

@@ -14,7 +14,7 @@ target_link_libraries(game PRIVATE
         CONAN_PKG::glm
         CONAN_PKG::glew
         OpenGL::GL
-        SDL2::SDL2
+	SDL2::SDL2
         CONAN_PKG::imgui
         CONAN_PKG::stb
         )
