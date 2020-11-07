@@ -19,7 +19,8 @@ udacity final project
        + Linux: gcc / g++ is installed by default on most Linux distros
        + Mac: same deal as make - install Xcode command line tools
        + Windows: recommend using MinGW
-
+   * conan
+     + []('https://conan.io/downloads.html')
 # Basic Build Instructions
 
 
