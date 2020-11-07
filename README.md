@@ -20,7 +20,7 @@ udacity final project
        + Mac: same deal as make - install Xcode command line tools
        + Windows: recommend using MinGW
    * conan
-     + []('https://conan.io/downloads.html')
+     + [you can download it here]('https://conan.io/downloads.html')
 # Basic Build Instructions
 
 
