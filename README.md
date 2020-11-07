@@ -6,7 +6,7 @@ udacity final project
 
 # Dependencies for Running Locally
    * python >= 3.4 for pip
-      + install pip from here if need to [](https://pip.pypa.io/en/stable/installing/)
+      + install pip from here if need to [pip](https://pip.pypa.io/en/stable/installing/)
    * cmake >= 3.7
        - All OSes: click here for installation instructions
    *  make >= 4.1 (Linux, Mac), 3.81 (Windows)
