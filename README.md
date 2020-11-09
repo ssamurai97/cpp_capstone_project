@@ -70,5 +70,5 @@ This project is a submission for the Udacity C++ Nanodegree program capstone pro
   - `include/component.cpp`
      * line `18-21`
 * The project uses smart pointers instead of raw pointers.
-  - `src/game.cpp'
+  - `src/game.cpp`
      * line `line 33`
