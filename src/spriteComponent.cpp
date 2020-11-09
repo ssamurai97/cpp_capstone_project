@@ -57,8 +57,7 @@ void Sprite_Component::draw(const Shared_Ref<Shader> &shader, const Shared_Ref<V
 {
   if (d_texture) {
 
-    glm::mat4 sc = glm::scale(glm::mat4(1.0f),glm::vec3(0.6f/static_cast<float>(d_width), 0.6f/static_cast<float>(d_height), 1.0));
-
+    glm::mat4 sc = glm::scale(glm::mat4(1.0f),glm::vec3(0.5f/static_cast<float>(d_width), 0.5f/static_cast<float>(d_height), 1.0));
     glm::mat4 world= sc * d_owner->get_world_transform();
     shader->set_uniform_mat4f("u_world_transform", world);
     d_texture->bind();

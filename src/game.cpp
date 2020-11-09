@@ -5,6 +5,7 @@
 #include "../include/game.h"
 #include "../include/actor.h"
 #include "../include/renderer.h"
+#include"../include/robot.h"
 #include <spdlog/spdlog.h>
 #include <memory>
 #include <algorithm>
@@ -134,6 +135,8 @@ void Game::remove_actor(Actor *actor) {
   }
 }
 void Game::load_data() {
-
+  // create robot
+  d_robot = new Robot(this);
+  d_robot->set_size({60.0f, 80.0f});
 }
 }

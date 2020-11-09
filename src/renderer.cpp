@@ -88,21 +88,21 @@ void Renderer::init(float width, float height)
 
   create_verts();
 
-  d_texture = Texture::create();
-
-  d_texture->load("../../src/images/mech_h.png");
 
 }
 void Renderer::draw(){
 
-  clear_color({0.8f, 0.5f, 0.5f, 1.0f});
+  clear_color({0.0f, 0.5f, 0.5f, 1.0f});
   // Clear the color buffer
   clear();
   // Enable depth buffering/disable alpha blend
   enable_gl_blend();
-  begin_scene(d_camera.get_camera());
-  d_texture->bind();
-  submit(d_shader, d_vertex_array);
+
+  d_shader->bind();
+  d_vertex_array->bind();
+  for(auto sprite : d_sprites) {
+    sprite->draw(d_shader);
+  }
 
   SDL_GL_SwapWindow(d_window);
 }
@@ -110,6 +110,7 @@ void Renderer::draw(){
 
 void Renderer::create_verts()
 {
+
 
 
   float vertices[] = {
@@ -167,6 +168,8 @@ void Renderer::draw_indexed(const Shared_Ref<Vertex_Array> &vertex_array, uint32
 bool Renderer::load_shaders() {
   d_shader = Shader::create("../../src/shaders/Texture.glsl");
 
+  d_shader->bind();
+  d_shader->set_uniform_mat4f("u_view", d_project);
   return true;
 }
 

@@ -13,8 +13,8 @@ void main() {
 
     vec4 pos = vec4(a_Position, 1.0);
 
-    //gl_Position = u_world_transform * u_view * pos;
-    gl_Position = u_view * pos;
+    gl_Position = u_world_transform * u_view * pos;
+    //gl_Position = u_view * pos;
     v_texcord = a_TexCord;
 }
 

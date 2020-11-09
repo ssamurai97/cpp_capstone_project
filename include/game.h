@@ -12,6 +12,7 @@
 namespace my_game {
 class  Actor;
 class Renderer;
+class Robot;
 class Game
 {
 public:
@@ -35,7 +36,8 @@ private:
   void update();
   void generate_out_put();
   void load_data();
-
+// robot actor
+  Robot*                     d_robot;
   std::vector<Actor*>        d_actors;
   // pending actors
   std::vector<Actor*>        d_pending_actors;

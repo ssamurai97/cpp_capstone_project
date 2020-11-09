@@ -4,6 +4,7 @@ basic OpenGL/SDL2 game engine
 
 This project is a submission for the Udacity C++ Nanodegree program capstone project
 
+![alt=with:50 height:50](src/images/sprite_t.png)
 # Dependencies for Running Locally
 
  this project uses **conan package management** to manage dependencies <br>
